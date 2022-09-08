@@ -31,7 +31,7 @@ import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
-
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -41,10 +41,10 @@ public final class PostPigeon extends JavaPlugin {
     private NamespacedKey cornKey;
     private ItemStack corn;
     private ConfigManager configManager;
-
+    public static PostPigeon instance;
     @Override
     public void onEnable() {
-
+        instance = this;
         saveDefaultConfig();
 
         LanguageManager.getInstance().loadLanguage(this);
